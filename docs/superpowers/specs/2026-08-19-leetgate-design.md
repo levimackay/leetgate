@@ -5,20 +5,16 @@
 
 ## Problem
 
-Practice is not happening. Baseline pulled from the LeetCode API on 2026-08-19 for user `lmack03`:
+Self-directed interview practice fails in two distinct ways, and they compound:
 
-- 7 unique problems solved, all Easy, over 67 days
-- 5 active days in that window
-- **9 submissions, 9 accepted, zero failures**
-- Session shape: 4 problems in 73 minutes (2026-07-28), 2 problems in 13 minutes (2026-08-18), first-try accepted in every case
-- List position was restarted: first six problems are the Top Interview easy set, the 2026-08-18 pair are problems 1 and 2 of LeetCode 75
+1. **Frequency.** Practice happens in sporadic bursts separated by weeks rather than on a schedule, so nothing accumulates and each session restarts from cold.
+2. **Method.** Reading a solution and typing it out builds recognition, not production, and only production is tested under interview conditions.
 
-Two distinct failures, in order of importance:
+The second failure is invisible to every metric a practice tracker normally records. A transcribed solution and a derived one produce the same artifact: one accepted submission. Acceptance count, streak, and difficulty mix cannot tell them apart.
 
-1. **Frequency.** Showing up 5 days out of 67.
-2. **Method.** A 100% acceptance rate at this experience level indicates solutions were transcribed rather than derived. Reading a solution and typing it out builds recognition, not production — and only production is tested.
+leetgate addresses the first failure by making the machine unusable until the day's work is done, and the second by making the unit of work a *re-solve from memory* rather than an accepted submission. A solution that was copied cannot be reproduced cold a week later, so the schedule surfaces it without needing to detect anything.
 
-leetgate addresses (1) by making the machine unusable until the day's work is done, and (2) by making the unit of work a *re-solve from memory* rather than an accepted submission.
+Baseline metrics are read from the LeetCode API at install time. All submission history predating installation is ignored, so prior activity neither satisfies a quota nor inflates a statistic.
 
 ## Non-goals
 
@@ -156,7 +152,7 @@ overrides(id PK, started_at, expires_at, reason)
 sync_state(id PK, last_success_at, last_error)
 ```
 
-`problems` is seeded from a static list committed to the repo: NeetCode 150 order, Easy only for v1, Medium unlocked manually, Hard excluded. Given the baseline, the seed starts at the beginning — the first new problem is `two-sum`, solved cold.
+`problems` is seeded from a static list committed to the repo: NeetCode 150 order, Easy only for v1, Medium unlocked manually, Hard excluded. The seed starts at the beginning of the list; the first new problem is `two-sum`, solved cold.
 
 ### Data flow
 

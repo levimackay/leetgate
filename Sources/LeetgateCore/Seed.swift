@@ -4,8 +4,9 @@ import Foundation
 /// be attempted. Pattern-contiguous on purpose — solving four problems that share
 /// a shape is what makes the shape transfer.
 ///
-/// `two-sum` leads deliberately. It is the problem most likely to have been
-/// transcribed rather than derived, so re-deriving it cold is the first honest rep.
+/// `two-sum` leads deliberately: it is the canonical entry point to the set and the
+/// one most often memorised rather than derived, which makes solving it cold a useful
+/// calibration for everything after it.
 public enum Seed {
     public static let problems: [SeedProblem] = raw.enumerated().map { index, entry in
         SeedProblem(slug: entry.0, title: entry.1, difficulty: .easy, pattern: entry.2, seq: index)

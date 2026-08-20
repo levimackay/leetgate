@@ -62,7 +62,7 @@ private func tempDB() throws -> Database {
 @Test func historicalSolvesDoNotUnlockAFreshInstall() async throws {
     // Everything in this fixture predates installation, so day one must still
     // be locked on two-sum. If this ever passes as unlocked, the pre-install
-    // cutoff has regressed and two months of copied solutions would count.
+    // cutoff has regressed and pre-install history would satisfy a quota.
     let db = try tempDB()
     let now = Date()
     try db.setInstalledAt(now)
