@@ -92,3 +92,5 @@ All decision logic lives in `LeetgateCore` as pure functions over an injected cl
 and calendar, so scheduling, quota evaluation and hosts rendering are testable
 without root or network. The privileged code in `leetgated` executes plans and makes
 no decisions of its own.
+
+**Last updated:** 2026-08-20 07:11 MDT
