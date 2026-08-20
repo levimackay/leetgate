@@ -34,7 +34,7 @@ public struct URLSessionTransport: HTTPTransport {
 }
 
 /// Reads the public profile endpoint. No authentication, no cookies, no scraping.
-public struct LeetCodeClient {
+public struct LeetCodeClient: Sendable {
     public static let endpoint = URL(string: "https://leetcode.com/graphql")!
 
     private let transport: HTTPTransport
